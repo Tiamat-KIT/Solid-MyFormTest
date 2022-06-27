@@ -2,28 +2,33 @@ import { createSignal,createEffect } from "solid-js";
 import { Form,Button } from "solid-bootstrap";
 
 function MytestForm(){
-    let UN = "";
-    let KW = "";
-    createEffect(() => console.log("ユーザ名が"+UN+"で、キーワードが"+KW+"です"));
+
+    type FormData = {
+        UN : string
+        KW : string
+    }
+
+    const [FormData,setFormData] = createSignal({
+        UN:"",
+        KW:""
+    })
+
     return(
         <div>
             <Form>
                 <Form.Group>
                     <Form.Label>User name</Form.Label>
-                    <Form.Control value={UN} type="name" placeholder="Enter UserName" />
+                    <Form.Control type="name" placeholder="Enter UserName" />
                     <Form.Text class="test-muted">
                         ユーザ名を入力してください
                     </Form.Text>
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Keyword</Form.Label>
-                    <Form.Control value={KW} type="name" placeholder="Enter Keyword" />
+                    
+                    <Form.Control type="name" placeholder="Enter Keyword" />
                     <Form.Text class="test-muted">
                         キーワードを入力してください
                     </Form.Text>
                 </Form.Group>
-                <Button variant="primary" type="submit">Submit</Button>
+                <button class="primary" type="submit" >Submit</button>
             </Form>
             
         </div>
