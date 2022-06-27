@@ -34,5 +34,5 @@ function MytestForm(){
         </div>
     )
 }
-
+/*https://ja.reactjs.org/docs/refs-and-the-dom.html なんかこれが関係してきそう*/ 
 export default MytestForm
